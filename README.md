@@ -1,24 +1,41 @@
-ParallelImageProcessor:
+# Parallel Image Processor
 
-Build four versions of an image processing program
-Base (serial)
-OpenMP (CPU multi-threaded)
-MPI (distributed parallel)
-Cuda (GPU parallel)
-Compare runtime on multiple image sizes
+A C++ image processing project that compares different approaches to parallel computing. The same image processing tasks are implemented using a serial version, OpenMP, MPI, and CUDA to compare performance across different image sizes.
 
-Tools utilized:
-C++
-OpenCV -processes images and videos used to load, filter, and save images in the project.
-CMake-Build tool that sets up and compiles the project — handles linking OpenCV, OpenMP, and MPI.
-OpenMP
-MPI
-macOS M1
-Nvidia Nsight Systems (for report)
-Github
+## Implementations
 
-- apply common image enhancement techniques like: Gaussian blur and Canny 
-edge detection
-- Speed up processing using OpenMP for multi core parallelism
-- Measure and compare performance so the execution time
+- **Serial** — baseline implementation used for comparison
+- **OpenMP** — CPU multithreading
+- **MPI** — distributed parallel processing
+- **CUDA** — GPU parallel processing
 
+## Image Processing
+
+The project uses OpenCV to load, process, and save images. Image processing operations include:
+
+- Gaussian blur
+- Canny edge detection
+- Processing across multiple image sizes
+- Runtime measurement and performance comparison
+
+## Technologies
+
+- C++
+- OpenCV
+- CUDA
+- OpenMP
+- MPI
+- CMake
+- Git & GitHub
+
+## Project Structure
+
+```text
+parallel-image-processor/
+├── base/       # Serial implementation
+├── cuda/       # CUDA GPU implementation
+├── mpi/        # MPI implementation
+├── openmp/     # OpenMP implementation
+├── data/       # Input data
+├── results/    # Performance results
+└── CMakeLists.txt
